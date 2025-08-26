@@ -1,0 +1,280 @@
+/* ===== Contact Form Container ===== */
+.container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: var(--warm-neutral);
+  border-radius: var(--border-radius-s);
+  box-shadow: 0 5px 15px rgba(30, 63, 45, 0.6);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(30, 63, 45, 0.3);
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary-light));
+}
+
+h1 {
+  color: var(--primary-dark);
+  font-size: var(--font-size-xxl);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--accent-gold);
+  border-radius: 2px;
+}
+
+p {
+  color: var(--warm-neutral);
+  /* text-align: center; */
+  margin-bottom: 2rem;
+  font-size: var(--font-size-m);
+}
+
+/* ===== Form Styles ===== */
+#bookingForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid rgba(168, 218, 220, 0.5);
+  border-radius: var(--border-radius-s);
+  background-color: #f8f9fa;
+  color: var(--true-black);
+  font-size: var(--font-size-n);
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary-teal);
+  box-shadow: 0 0 0 3px rgba(168, 218, 220, 0.3);
+  background-color: var(--pure-white);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ===== Guest Counter ===== */
+.guest-counter {
+  display: flex;
+  gap: 2rem;
+  background: rgba(168, 218, 220, 0.1);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-s);
+}
+
+.counter-group {
+  flex: 1;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.counter-btn {
+  background: var(--secondary-teal);
+  color: var(--pure-white);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.counter-btn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+.counter input {
+  width: 60px;
+  text-align: center;
+  margin: 0 0.5rem;
+  font-weight: var(--font-weight-semibold);
+  background: transparent;
+  border: none;
+}
+
+/* ===== Submit Button ===== */
+.submit-btn {
+  background: linear-gradient(to right, var(--secondary-teal), var(--primary-dark));
+  color: var(--pure-white);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius-m);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(29, 53, 87, 0.2);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(to right, var(--accent-gold), var(--secondary-teal));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(29, 53, 87, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* ===== Success Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(29, 53, 87, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--pure-white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-s);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.4s ease-out;
+}
+
+.modal-content h2 {
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  font-size: var(--font-size-xl);
+}
+
+.modal-content p {
+  color: var(--secondary-teal);
+  margin-bottom: 1rem;
+  font-size: var(--font-size-m);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--deep-rust);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: var(--primary-dark);
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+  
+  .guest-counter {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .nav-menu {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 1.5rem 0.5rem;
+    padding: 1.25rem;
+  }
+
+  h1 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .submit-btn {
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .nav-menu {
+    gap: 0.75rem;
+  }
+  
+  .nav-logo img {
+    height: 40px;
+  }
+}
