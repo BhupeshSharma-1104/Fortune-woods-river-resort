@@ -1632,18 +1632,6 @@ a:focus, button:focus {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-/* ===== New Sections Styling ===== */
-
 /* Trust Signals Section */
 .trust-signals {
     background: var(--pure-white);
@@ -1843,3 +1831,4 @@ a:focus, button:focus {
 .faq-item.active p {
     animation: fadeIn 0.3s ease forwards;
 }
+
