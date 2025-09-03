@@ -243,6 +243,84 @@ main {
   box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.3);
 }
 
+/* Trust badges styling */
+.trust-badges {
+    background: #f8f9fa;
+    padding: 20px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.badges-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.badge {
+    text-align: center;
+    padding: 15px;
+    min-width: 180px;
+}
+
+.badge i {
+    font-size: 2rem;
+    color: #c19a6b;
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* Navigation booking buttons */
+.nav-booking {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-booking-btn {
+    padding: 8px 15px;
+    background: #c19a6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.nav-booking-btn:hover {
+    background: #a5825d;
+    transform: translateY(-2px);
+}
+
+.nav-booking-btn.phone {
+    background: #28a745;
+}
+
+.nav-booking-btn.phone:hover {
+    background: #218838;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-booking {
+        display: none;
+    }
+    
+    .badges-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .badge {
+        margin-bottom: 15px;
+    }
+}
+
 /* ===== About Section ===== */
 .about-section {
   background-color: var(--warm-neutral);
@@ -1512,4 +1590,256 @@ button:focus-visible,
     padding: 12px 25px;
     font-size: 0.9rem;
   }
+}
+
+/* Add to your existing CSS */
+/* Improve loading performance */
+video[autoplay] {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+video[autoplay].loaded {
+    opacity: 1;
+}
+
+/* Schema markup visibility */
+[itemscope] {
+    display: none; /* Hide schema markup from visual display */
+}
+
+/* Improve focus styles for accessibility */
+a:focus, button:focus {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 3px;
+}
+
+/* Add print styles */
+@media print {
+    .navbar, .booking, .carousel-nav, .footer-bottom {
+        display: none !important;
+    }
+    
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    a::after {
+        content: " (" attr(href) ") ";
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===== New Sections Styling ===== */
+
+/* Trust Signals Section */
+.trust-signals {
+    background: var(--pure-white);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.trust-item {
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.trust-item:hover {
+    transform: translateY(-5px);
+}
+
+.trust-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trust-item h3 {
+    color: var(--primary-dark);
+    margin-bottom: 5px;
+    font-size: var(--font-size-l);
+}
+
+.trust-item p {
+    color: var(--shadow-brown);
+    font-size: var(--font-size-s);
+}
+
+/* Local Area Section */
+.local-area-section {
+    background: var(--warm-neutral);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.local-area-section h2 {
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    font-size: var(--font-size-xxl);
+}
+
+.local-area-section > p {
+    color: var(--shadow-brown);
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: var(--font-size-m);
+}
+
+.attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.attraction {
+    background: var(--pure-white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attraction:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.attraction h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-size: var(--font-size-l);
+}
+
+.attraction p {
+    color: var(--shadow-brown);
+    font-size: var(--font-size-s);
+    line-height: 1.6;
+}
+
+.local-area-section > p:last-of-type {
+    margin-top: 30px;
+    font-style: italic;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+    background: var(--pure-white);
+}
+
+.faq-section h2 {
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: var(--font-size-xxl);
+}
+
+.faq-item {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-size: var(--font-size-l);
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+}
+
+.faq-item h3::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active h3::after {
+    content: '-';
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.faq-item p {
+    color: var(--shadow-brown);
+    font-size: var(--font-size-m);
+    line-height: 1.6;
+    display: none;
+}
+
+.faq-item.active p {
+    display: block;
+}
+
+/* Responsive Design for New Sections */
+@media (max-width: 768px) {
+    .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .trust-item {
+        padding: 10px;
+    }
+    
+    .attractions-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .faq-item {
+        padding: 0 15px 20px;
+    }
+    
+    .local-area-section, 
+    .faq-section, 
+    .trust-signals {
+        padding: 50px 0;
+    }
+}
+
+/* Animation for FAQ toggle */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-item.active p {
+    animation: fadeIn 0.3s ease forwards;
 }
