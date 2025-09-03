@@ -175,36 +175,31 @@ main {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .rooms-hero {
-        height: 50vh;
-    }
+    .hero-section .title {
+    font-size: 1.5rem;
+  }
 
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
+  .hero-section .subtitle {
+    font-size: 1.1rem;
+  }
 
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    .btn {
-        padding: 12px 25px;
-    }
+  .hero-section .description {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .rooms-hero {
-        height: 40vh;
+    .hero-section .title {
+        font-size: 1.3rem;
     }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
+    .hero-section .subtitle {
         font-size: 1rem;
     }
-}
+    .booking {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+  }
 
 
 /* ===== Room Tabs Navigation ===== */
@@ -737,4 +732,5 @@ main {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+
 }
