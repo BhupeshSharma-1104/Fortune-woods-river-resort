@@ -163,3 +163,70 @@ document.addEventListener('DOMContentLoaded', function() {
   // Update year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
 });
+
+// Add to your existing JavaScript
+// Video loading optimization
+document.addEventListener('DOMContentLoaded', function() {
+    // Optimize video loading
+    const video = document.querySelector('.hero-section video');
+    if (video) {
+        video.addEventListener('loadeddata', function() {
+            this.classList.add('loaded');
+        });
+        
+        // Set video to low priority loading
+        video.setAttribute('preload', 'metadata');
+    }
+    
+    // Lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => {
+            img.loading = 'lazy';
+        });
+    }
+    
+    // Add schema markup dynamically
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.fortunewoodsriverresorts.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Dandeli Resorts",
+                "item": "https://www.fortunewoodsriverresorts.com/dandeli-resorts"
+            }
+        ]
+    };
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(script);
+});
+
+
+// FAQ functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // FAQ toggle functionality
+    const faqItems = document.querySelectorAll('.faq-item h3');
+    
+    faqItems.forEach(function(question) {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            faqItem.classList.toggle('active');
+        });
+    });
+    
+    // Open first FAQ by default
+    if (faqItems.length > 0) {
+        faqItems[0].parentElement.classList.add('active');
+    }
+});
