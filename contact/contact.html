@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Book Your Visit</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="contact-style.css">
+    <meta name="description" content="Book your stay at Fortune Woods River Resort in Dandeli. Contact us for reservations, room inquiries, and special packages for your perfect getaway.">
+    <meta name="keywords" content="Fortune Woods River Resort booking, Dandeli resort contact, Kali River resort, Karnataka resort reservation, dandeli resort booking, home stay booking">
+    <meta name="author" content="Fortune Woods River Resort">
+    <meta property="og:title" content="Contact Fortune Woods River Resort - Book Your Stay">
+    <meta property="og:description" content="Reserve your nature getaway at Fortune Woods River Resort in Dandeli. Luxury accommodations and adventure activities await.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fortunewoodsriverresorts.com/contact.html">
+    <!-- Add canonical URL -->
+    <link rel="canonical" href="https://www.fortunewoodsriverresorts.com/contact.html">
+    <!-- Add schema.org markup for local business -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Hotel",
+          "name": "Fortune Woods River Resort",
+          "description": "Luxury river resort in Dandeli, Karnataka offering adventure activities and peaceful accommodations",
+          "url": "https://www.fortunewoodsriverresorts.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Gobral",
+            "addressLocality": "Dandeli",
+            "addressRegion": "Karnataka",
+            "postalCode": "581325",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "15.1976",
+            "longitude": "74.6572"
+          },
+          "telephone": "+91-6366429999",
+          "email": "fortunewoodsresort@gmail.com",
+          "openingHours": "Mo-Su 00:00-23:59",
+          "priceRange": "₹₹₹",
+          "amenityFeature": [
+            "Riverfront",
+            "Adventure Activities",
+            "Luxury Cottages",
+            "Restaurant"
+          ]
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar section-content">
+            <a href="../index.html" class="nav-logo">
+                <img class="logo" src="../images/nav-logo.png" alt="Fortune Woods River Resort Logo" loading="lazy">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-list"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-list"><a href="../room/rooms.html" class="nav-link">Rooms</a></li>
+                <li class="nav-list"><a href="../activity/activities.html" class="nav-link">Activities</a></li>
+                <li class="nav-list"><a href="#" class="nav-link active">Contact Us</a></li>
+                <li class="nav-list"><a href="../laguna/laguna.html" class="nav-link" target="_blank">Laguna River Resort</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Book Your Visit</h1>
+            <p>Please fill out the form below with your visit details and we'll get back to you soon.</p>
+    
+            <form id="bookingForm">
+                <!-- guest name -->
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <!-- arrival date -->
+                <div class="form-group">
+                    <label for="arrivalDate">Arrival Date</label>
+                    <input type="date" id="arrivalDate" name="arrivalDate" required>
+                </div>
+                <!-- departure date -->
+                <div class="form-group">
+                    <label for="departureDate">Departure Date*</label>
+                    <input type="date" id="departureDate" name="departureDate" required onchange="calculateNights()">
+                </div>
+                <!-- number of guest -->
+                <div class="form-group">
+                    <label>Number of Guest</label>
+                    <div class="guest-counter">
+                        <div class="counter-group">
+                            <label for="adults">Adults</label>
+                            <div class="counter">
+                                <button type="button" class="counter-btn" onclick="adjustCount('adults', -1)">-</button>
+                                <input type="number" id="adults" name="adults" value="1" min="1" readonly>
+                                <button type="button" class="counter-btn" onclick="adjustCount('adults', 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="counter-group">
+                            <label for="children">Children</label>
+                            <div class="counter">
+                                <button type="button" class="counter-btn" onclick="adjustCount('children', -1)">-</button>
+                                <input type="number" id="children" name="children" value="0" min="0" readonly>
+                                <button type="button" class="counter-btn" onclick="adjustCount('children', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- contact number -->
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number*</label>
+                    <input type="tel" id="contactNumber" name="contactNumber" required>
+                </div>
+                <!-- message -->
+                <div class="form-group">
+                    <label for="message">Additional Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Booking Request</button>
+            </form>
+        </div>
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Thank You!</h2>
+                <p>Your booking request has been received successfully.</p>
+                <p>We'll contact you soon to confirm your visit.</p>
+            </div>
+        </div>
+    </main>
+
+     <footer class="site-footer">
+        <div class="footer-content">
+            <!-- Resort Info Column -->
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="../images/nav-logo.png" alt="Fortune Woods River Resort" class="footer-logo-img" loading="lazy">
+                </div>
+                <p class="footer-tagline">Where the Kali River whispers and adventure calls</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" class="contact-icon">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <a href="https://maps.app.goo.gl/LU783rnqKUt4YHmy8?g_st=iw" target="_blank">fortune woods, river resort ,resort, Mainal - Dandeli Rd, Kariampalli, Dandeli, Karnataka 581325</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" class="contact-icon">
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                        </svg>
+                        <span>+91 6366429999</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" class="contact-icon">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <span>fortunewoodsresort@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html" class="footer-link">Home</a></li>
+                    <li><a href="../room/rooms.html" class="footer-link">Rooms</a></li>
+                    <li><a href="../activity/activities.html" class="footer-link">Activities</a></li>
+                    <li><a href="../laguna/laguna.html" class="footer-link" target="_blank">Laguna River Resort</a></li>
+                    <li><a href="#" class="footer-link">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect Column -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1C1ASmtTaz/?mibextid=wwXIfr" class="social-link" aria-label="Facebook" target="_blank">
+                        <svg viewBox="0 0 24 24" class="social-icon">
+                            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/fortunewoods_/" class="social-link" aria-label="Instagram" target="_blank">
+                        <svg viewBox="0 0 24 24" class="social-icon">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCH7d3Fa2ydYa6ZScG0BI14Q" class="social-link" aria-label="YouTube" target="_blank">
+                        <svg viewBox="0 0 24 24" class="social-icon">
+                            <path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Fortune Woods River Resort. All rights reserved.</p>
+        </div>
+     </footer>
+     <script src="contact.js"></script>
+     <script src="../script.js"></script>
+    </body>
+    </html>
+    </main>
