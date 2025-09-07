@@ -84,7 +84,7 @@
 
 .hero-section {
   position: relative;
-  height: 100vh;
+  height: 80vh;
   width: 100%;
 }
 
@@ -734,4 +734,5 @@ main {
     to { opacity: 1; transform: translateY(0); }
 
 }
+
 
