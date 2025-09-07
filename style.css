@@ -174,7 +174,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 
@@ -1842,4 +1842,5 @@ a:focus, button:focus {
 
 .faq-item.active p {
     animation: fadeIn 0.3s ease forwards;
+
 }
